@@ -46,3 +46,5 @@ def three_sum(array):
                 l += 1
                 r -= 1
     return res
+
+three_sum([-1, 0, 1, 2, -1, -4])
