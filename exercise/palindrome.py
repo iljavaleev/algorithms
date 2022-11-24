@@ -50,3 +50,17 @@ def is_palindrome_iterative_compact(values):
         right -= 1
     # left >= right or values[left] != values[right]
     return left >= right
+
+def is_palindrome_extension(values):
+    values = values.lower().replace(' ', '').replace(',', ).strip('!?')
+    left = 0
+    right = len(values) - 1
+
+    same_values = True
+
+    while left < right and same_values:
+        same_values = values[left] == values[right]
+        left += 1
+        right -= 1
+
+    return same_values
