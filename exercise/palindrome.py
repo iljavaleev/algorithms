@@ -51,16 +51,29 @@ def is_palindrome_iterative_compact(values):
     # left >= right or values[left] != values[right]
     return left >= right
 
+
 def is_palindrome_extension(values):
-    values = values.lower().replace(' ', '').replace(',', ).strip('!?')
+    values = values.lower()
     left = 0
     right = len(values) - 1
 
     same_values = True
 
     while left < right and same_values:
+
+        if values[right] in ['!', '?']:
+            right -= 1
+            continue
+
+        if values[left] == ' ':
+            left += 1
+        if values[right] == ' ':
+            right -= 1
+
         same_values = values[left] == values[right]
         left += 1
         right -= 1
 
     return same_values
+
+print(is_palindrome_extension('Was it a car or a cat I saw?'))

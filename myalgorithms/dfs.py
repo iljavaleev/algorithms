@@ -11,13 +11,13 @@ def dfs_iterative(vertex: Vertex):
         v = S.pop()
         if not v.explored:
             v.explored = True
-            for n in v.adj_list:
-                S.append(n)
+            for n in v.out_adj_list:
+                S.append(n.destination)
 
 
 def dfs_recursive(vertex: Vertex):
     vertex.explored = True
-    for v in vertex.adj_list:
+    for v, w in vertex.out_adj_list:
         if not v.explored:
             v.explored = True
             dfs_recursive(v)

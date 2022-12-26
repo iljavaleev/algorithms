@@ -27,6 +27,7 @@ def calc_prime_factors(value):
             else:
                 break
 
-value = 1111
-result = calc_prime_factors(value)
-assert value == reduce(mul, result)
+# value = 1111
+# result = calc_prime_factors(value)
+# assert value == reduce(mul, result)
+print(get_prime_numbers(15))

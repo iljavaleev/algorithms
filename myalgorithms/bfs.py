@@ -2,16 +2,17 @@ from queue import Queue
 from nodes_edges import Vertex
 import math
 
+
 def bfs(vertex: Vertex):
     Q = Queue()
     vertex.explored = True
     Q.put(vertex)
     while not Q.empty():
         v = Q.get()
-        for w in v.adj_list:
-            if not w.explored:
-                w.explored = True
-                Q.put(w)
+        for w in v.out_adj_list:
+            if not w.destination.explored:
+                w.destination.explored = True
+                Q.put(w.destination)
 
 
 def bfs_with_length(vertex: Vertex):
@@ -22,11 +23,11 @@ def bfs_with_length(vertex: Vertex):
     Q.put(vertex)
     while not Q.empty():
         v = Q.get()
-        for w in v.adj_list:
-            if not w.explored:
-                w.explored = True
-                w.value = v.value + 1
-                Q.put(w)
+        for w in v.out_adj_list:
+            if not w.destination.explored:
+                w.destination.explored = True
+                w.destination.value = v.value + 1
+                Q.put(w.destination)
 
 
 def UCC(graph):
@@ -41,10 +42,10 @@ def UCC(graph):
             while not Q.empty():
                 v = Q.get()
                 v.component = numCC
-                for w in v.adj_list:
-                    if not w.explored:
-                        w.explored = True
-                        Q.put(w)
+                for w in v.out_adj_list:
+                    if not w.destination.explored:
+                        w.destination.explored = True
+                        Q.put(w.destination)
 
 
 if __name__ == '__main__':
