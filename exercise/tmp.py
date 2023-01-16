@@ -55,3 +55,36 @@
 # print(get_creators(b2))
 # print(get_creators({'type': 'book', 'pages': 770}))
 
+# def circular():
+#     while True:
+#         for connection in ['a', 'b', 'c']:
+#             yield connection
+
+# from itertools import cycle
+#
+# lst = ['a', 'b', 'c']
+#
+# pool = cycle(lst)
+#
+# for _ in range(20):
+#     print(next(pool))
+
+from random import randint as r
+l = 10 * [None]
+
+n = len(l)
+h1 = r(0, n)
+h2 = r(0, n)
+check = 0
+it = 0
+
+while check != n:
+    if l[h1] is None:
+        l[h1] = 1
+        check += 1
+    else:
+        h2 = r(0, n)
+        h1 = (h1 + h2) % n
+    print(l)
+    it += 1
+print(it, l)
