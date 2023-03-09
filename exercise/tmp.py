@@ -69,22 +69,27 @@
 # for _ in range(20):
 #     print(next(pool))
 
-from random import randint as r
-l = 10 * [None]
-
-n = len(l)
-h1 = r(0, n)
-h2 = r(0, n)
-check = 0
-it = 0
-
-while check != n:
-    if l[h1] is None:
-        l[h1] = 1
-        check += 1
-    else:
-        h2 = r(0, n)
-        h1 = (h1 + h2) % n
-    print(l)
-    it += 1
-print(it, l)
+# from random import randint as r
+# l = 10 * [None]
+#
+# n = len(l)
+# h1 = r(0, n)
+# h2 = r(0, n)
+# check = 0
+# it = 0
+#
+# while check != n:
+#     if l[h1] is None:
+#         l[h1] = 1
+#         check += 1
+#     else:
+#         h2 = r(0, n)
+#         h1 = (h1 + h2) % n
+#     print(l)
+#     it += 1
+# print(it, l)
+w = 'asdf'
+l = []
+for i in range(len(w)):
+    l.append(w[:i] + w[i+1:])
+print(l)

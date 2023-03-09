@@ -3,16 +3,16 @@ from random import shuffle
 
 class Heap:
     def __init__(self, iter=None):
-        self.heap = list()
-        if iter:
-            for obj in iter:
-                self.insert(obj)
+        if iter is not None:
+            self.heap = list(iter)
+        else:
+            self.heap = list()
 
     def swap(self, fr, to):
         self.heap[fr], self.heap[to] = self.heap[to], self.heap[fr]
 
     def bubble_up(self, i):
-        while (i - 1) // 2 >= 0 and self.heap[i] < self.heap[(i - 1)//2]:
+        while i > 0 and self.heap[i] < self.heap[(i - 1)//2]:
             self.swap(i, (i - 1) // 2)
             i = (i - 1) // 2
 

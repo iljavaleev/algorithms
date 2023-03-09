@@ -1,7 +1,7 @@
 """
-Given a binary tree, determine if it is a valid binary search tree (BST).
+Given a binary tree, determine if it is a valid binary search tree (BT).
 
-Assume a BST is defined as follows:
+Assume a BT is defined as follows:
 
 The left subtree of a node contains only nodes
 with keys less than the node's key.

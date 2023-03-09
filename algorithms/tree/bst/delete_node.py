@@ -1,5 +1,5 @@
 """
-Given a root node reference of a BST and a key, delete the node with the given key in the BST. Return the root node reference (possibly updated) of the BST.
+Given a root node reference of a BT and a key, delete the node with the given key in the BT. Return the root node reference (possibly updated) of the BT.
 
 Basically, the deletion can be divided into two stages:
 
@@ -20,7 +20,7 @@ key = 3
 
 Given key to delete is 3. So we find the node with value 3 and delete it.
 
-One valid answer is [5,4,6,2,null,null,7], shown in the following BST.
+One valid answer is [5,4,6,2,null,null,7], shown in the following BT.
 
     5
    / \

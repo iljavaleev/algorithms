@@ -27,6 +27,7 @@ def shortest_distance(grid):
 
     return res if res!=float('inf') else -1
 
+
 def bfs(grid, matrix, i, j, count):
     q = [(i, j, 0)]
     while q:

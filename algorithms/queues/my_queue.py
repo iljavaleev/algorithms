@@ -141,3 +141,28 @@ class LinkedListQueue(AbstractQueue):
         if self.is_empty():
             raise IndexError("Queue is empty")
         return self._front.value
+
+
+if __name__ == '__main__':
+    ar_queue = MyQueue()
+    lines = []
+    with open('input.txt') as f:
+        for line in f:
+            lines.append(line.split())
+    for l in lines:
+        if l[0] == 'push':
+            ar_queue.enqueue(l[1])
+            print('ok')
+        else:
+            if l[0] == 'pop':
+                print(ar_queue.dequeue())
+            elif l[0] == 'front':
+                print(ar_queue.peek())
+            elif l[0] == 'size':
+                print(len(ar_queue))
+            elif l[0] == 'clear':
+                ar_queue.clear()
+                print('ok')
+            elif l[0] == 'exit':
+                print('bye')
+                break

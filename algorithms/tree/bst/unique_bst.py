@@ -1,9 +1,9 @@
 """
-Given n, how many structurally unique BST's
+Given n, how many structurally unique BT's
 (binary search trees) that store values 1...n?
 
 For example,
-Given n = 3, there are a total of 5 unique BST's.
+Given n = 3, there are a total of 5 unique BT's.
 
    1         3     3      2      1
     \       /     /      / \      \

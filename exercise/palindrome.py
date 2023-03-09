@@ -6,7 +6,7 @@ def is_palindrome_simple_recursive(values):
     right = len(values) - 1
 
     if values[left] == values[right]:
-        remainder = values[left+1:right]
+        remainder = values[left + 1:right]
         return is_palindrome_simple_recursive(remainder)
 
     return False
@@ -17,6 +17,8 @@ def is_palindrome_recursive_optimized(values):
 
 
 def is_palindrome_recursive_in_range(values, left, right):
+    """Без копирования списков."""
+
     if left >= right:
         return True
 
@@ -76,4 +78,5 @@ def is_palindrome_extension(values):
 
     return same_values
 
-print(is_palindrome_extension('Was it a car or a cat I saw?'))
+if __name__ == '__main__':
+    print(is_palindrome_extension('Was it a car or a cat I saw?'))

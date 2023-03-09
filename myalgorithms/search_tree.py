@@ -11,7 +11,7 @@ class Color(Enum):
 class Node:
     def __init__(self, value: int = None, root: bool = False,
                  parent: Node = None, left: Node = None, right: Node = None,
-                 color: Color = Color.BLACK):
+                 color: Color = Color.BLACK) -> None:
         self.value = value
         self.parent = parent
         self.left = left

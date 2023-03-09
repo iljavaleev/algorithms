@@ -257,7 +257,7 @@ If you want to uninstall algorithms, it is as simple as:
 - [queues](algorithms/queues)
     - [max_sliding_window](algorithms/queues/max_sliding_window.py)
     - [moving_average](algorithms/queues/moving_average.py)
-    - [queue](algorithms/queues/queue.py)
+    - [queue](algorithms/queues/my_queue.py)
     - [reconstruct_queue](algorithms/queues/reconstruct_queue.py)
     - [zigzagiterator](algorithms/queues/zigzagiterator.py)
 - [search](algorithms/search)
