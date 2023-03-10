@@ -27,9 +27,34 @@ class LinearHashing(Generic[K]):
             if self.table[pos] is None:
                 return None
             elif self.table[pos] == key:
-                return key
+                return pos
             else:
                 i += 1
+
+    def hash_inverse(self, key: K, pos: int) -> int:
+        return (pos - self.hash_function(key)) % self.m
+
+    def delete(self, key: K) -> None:
+        while True:
+            pos = self.search(key)
+            next_pos = pos
+
+            if pos is None:
+                raise ValueError('No such key')
+
+            self.table[pos] = None
+            next_pos = (next_pos + 1) % self.m
+            next_key = self.table[next_pos]
+
+            while (self.hash_inverse(next_key, pos)
+                    < self.hash_inverse(next_key, next_pos)):
+                next_pos = (next_pos + 1) % self.m
+                next_key = self.table[next_pos]
+                if next_key == None:
+                    return
+
+            self.table[pos] = next_key
+            pos = next_pos
 
 
 def isPrime(x):
